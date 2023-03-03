@@ -1,0 +1,19 @@
+<%- include('template.ejs') %>
+
+<form action="/addNew"  method="get">
+    <button>Add New Section</button>
+</form>
+
+<% for( let index = dataBase.length-1; index >= 0; index-- ) { %>
+    <div class="divclass" style="border: 2px solid grey;" >
+        <h4><%= dataBase[index].title %></h4>
+        <p><%= dataBase[index].date %></p>
+        <p class="pclass"><%= dataBase[index].description %></p>
+        <div>
+            <button style="background-color: rgb(73, 73, 150); color: rgb(204, 188, 188);">read more</button>
+            <button style="background-color :rgb(15, 237, 245); color: rgb(167, 155, 155);">edit</button>
+            <button style="background-color: rgb(255, 23, 23); color: rgb(128, 103, 103);">delete</button>
+        </div>
+
+    </div>
+<% } %>
